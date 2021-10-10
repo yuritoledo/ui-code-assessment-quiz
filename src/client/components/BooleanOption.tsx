@@ -1,9 +1,7 @@
 import React, { ChangeEvent, FC } from 'react'
-import styled from 'styled-components'
-
-const Container = styled.div`
-  display: flex;
-`
+import AnswerContainer from './AnswerContainer'
+import Input from './Input'
+import Label from './Label'
 
 interface Props {
   onPickValue(value: string): void
@@ -21,23 +19,27 @@ const BooleanOption: FC<Props> = (props) => {
   }
 
   return (
-    <Container>
-      <input
-        {...commonProps}
-        id='True'
-        value='True'
-        onChange={onChange}
-      />
-      <label htmlFor='True'>True</label>
+    <AnswerContainer>
+      <div>
+        <Input
+          {...commonProps}
+          id='True'
+          value='True'
+          onChange={onChange}
+        />
+        <Label htmlFor='True'>True</Label>
+      </div>
 
-      <input
-        {...commonProps}
-        id='False'
-        value='False'
-        onChange={onChange}
-      />
-      <label htmlFor='False'>False</label>
-    </Container>
+      <div>
+        <Input
+          {...commonProps}
+          id='False'
+          value='False'
+          onChange={onChange}
+        />
+        <Label htmlFor='False'>False</Label>
+      </div>
+    </AnswerContainer>
   )
 }
 export default BooleanOption

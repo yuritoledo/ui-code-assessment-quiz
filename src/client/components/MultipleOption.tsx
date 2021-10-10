@@ -1,10 +1,9 @@
 import React, { ChangeEvent, FC, Fragment } from 'react'
-import styled from 'styled-components'
 import { Question } from '../interfaces'
+import AnswerContainer from './AnswerContainer'
+import Input from './Input'
+import Label from './Label'
 
-const Container = styled.div`
-  display: flex;
-`
 
 interface Props {
   onPickValue(value: string): void
@@ -30,19 +29,19 @@ const MultipleOptions: FC<Props> = (props) => {
   ]
 
   return (
-    <Container>
+    <AnswerContainer>
       {options.map(option => (
-        <Fragment key={option}>
-          <input
+        <div key={option}>
+          <Input
             {...commonProps}
             id={option}
             value={option}
             onChange={onChange}
           />
-          <label htmlFor={option}>{option}</label>
-        </Fragment>
+          <Label htmlFor={option}>{option}</Label>
+        </div>
       ))}
-    </Container>
+    </AnswerContainer>
   )
 }
 
