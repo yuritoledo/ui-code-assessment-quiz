@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, Fragment } from 'react'
 import { Question } from '../interfaces'
 import AnswerContainer from './AnswerContainer'
-import Input from './Input'
+import RadioInput from './RadioInput'
 import Label from './Label'
 
 
@@ -32,7 +32,7 @@ const MultipleOptions: FC<Props> = (props) => {
     <AnswerContainer>
       {options.map(option => (
         <div key={option}>
-          <Input
+          <RadioInput
             {...commonProps}
             id={option}
             value={option}

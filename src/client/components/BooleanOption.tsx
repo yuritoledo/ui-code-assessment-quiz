@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC } from 'react'
 import AnswerContainer from './AnswerContainer'
-import Input from './Input'
+import RadioInput from './RadioInput'
 import Label from './Label'
 
 interface Props {
@@ -21,7 +21,7 @@ const BooleanOption: FC<Props> = (props) => {
   return (
     <AnswerContainer>
       <div>
-        <Input
+        <RadioInput
           {...commonProps}
           id='True'
           value='True'
@@ -31,7 +31,7 @@ const BooleanOption: FC<Props> = (props) => {
       </div>
 
       <div>
-        <Input
+        <RadioInput
           {...commonProps}
           id='False'
           value='False'
