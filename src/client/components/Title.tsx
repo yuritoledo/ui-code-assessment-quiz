@@ -1,10 +1,7 @@
 import React, { FC } from "react";
-import styled from "styled-components";
 
 const Title: FC = ({ children }) => (
-  <P>{children}</P>
+  <p>{children}</p>
 )
-
-const P = styled.p``
 
 export default Title
