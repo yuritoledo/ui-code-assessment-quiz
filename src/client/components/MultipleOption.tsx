@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, Fragment } from 'react'
+import React, { ChangeEvent, FC } from 'react'
 import { Question } from '../interfaces'
 import AnswerContainer from './AnswerContainer'
 import RadioInput from './RadioInput'
