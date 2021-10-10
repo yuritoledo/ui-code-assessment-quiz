@@ -39,7 +39,10 @@ export const QuizProvider: FC = ({ children }) => {
   }
 
   const onPickOrTypeAnwser = (userAnswer: string) => {
-    console.log(userAnswer)
+    console.log({
+      index,
+
+    })
     if (currentQuestion.correct_answer !== userAnswer) return
 
     setCorrectAnswers(correctAnswers + 1)
