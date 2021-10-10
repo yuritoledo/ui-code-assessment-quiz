@@ -5,6 +5,7 @@ import Quiz from "./page/Quiz"
 
 const Container = styled.div`
   font-family: 'Open Sans', sans-serif;
+  margin: 70px;
 `
 
 export const App = () => (
