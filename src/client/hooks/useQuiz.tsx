@@ -6,6 +6,7 @@ interface QuizContext {
   currentQuestion: Question
   questions: Question[]
   correctAnswers: number
+  showSummary: boolean
   onClickNext(): void
   onPickOrTypeAnwser(value: string): void
 }
@@ -25,7 +26,9 @@ export const QuizProvider: FC = ({ children }) => {
       const response = await getQuestions()
       if (!response) return null
 
-      setQuestions(response.results)
+      const filterred = response.results.filter((_, index) => index < 3)
+
+      setQuestions(filterred)
     }
 
     fetchQuestions()
@@ -36,17 +39,21 @@ export const QuizProvider: FC = ({ children }) => {
   }
 
   const onPickOrTypeAnwser = (userAnswer: string) => {
+    console.log(userAnswer)
     if (currentQuestion.correct_answer !== userAnswer) return
 
     setCorrectAnswers(correctAnswers + 1)
   }
+
+  const showSummary = index === questions.length
 
   const value = {
     currentQuestion,
     questions,
     onClickNext,
     onPickOrTypeAnwser,
-    correctAnswers
+    correctAnswers,
+    showSummary
   }
 
   return (
