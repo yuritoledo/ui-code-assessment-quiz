@@ -1,17 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
+import AppContainer from './components/AppContainer'
 import { QuizProvider } from "./hooks/useQuiz"
-import Quiz from "./page/Quiz"
-
-const Container = styled.div`
-  font-family: 'Open Sans', sans-serif;
-  margin: 70px;
-`
+import Quiz from "./page/Quiz/Quiz"
 
 export const App = () => (
-  <Container>
+  <AppContainer>
     <QuizProvider>
       <Quiz />
     </QuizProvider>
-  </Container>
+  </AppContainer>
 )
