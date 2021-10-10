@@ -1,8 +1,9 @@
-import * as React from 'react';
+import React from 'react'
+import { QuizProvider } from "./hooks/useQuiz"
+import { Quiz } from "./page/Quiz"
 
 export const App = () => (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <h1>Lucid</h1>
-        <h2>Welcome to UI Team code assessment!</h2>
-    </div>
-);
+  <QuizProvider>
+    <Quiz />
+  </QuizProvider>
+)
