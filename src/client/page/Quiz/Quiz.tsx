@@ -19,7 +19,7 @@ const Quiz = () => {
   }
   return (
     <div>
-      <Title>{currentQuestion.question}</Title>
+      <Title value={currentQuestion.question} />
       <Option question={currentQuestion} />
       <Button type='button' onClick={onClickNext}>next</Button>
     </div>
